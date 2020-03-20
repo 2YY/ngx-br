@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
-import { LibNgxBrComponent } from './lib-ngx-br.component';
+import {LibNgxBrPipe} from './lib-ngx-br.pipe';
 
 
 
 @NgModule({
-  declarations: [LibNgxBrComponent],
+  declarations: [LibNgxBrPipe],
   imports: [
   ],
-  exports: [LibNgxBrComponent]
+  exports: [LibNgxBrPipe]
 })
 export class LibNgxBrModule { }
