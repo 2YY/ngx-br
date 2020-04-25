@@ -75,7 +75,7 @@ jobs:
     - name: Export coverage
       run: npm run test -- --no-watch --code-coverage --no-progress --browsers=ChromeHeadlessCI
     - name: Add .nojekyll file to GitHub Pages deployment
-      run: touch coverage/lib-ngx-br/.nojekyll
+      run: touch coverage/ngx-br/.nojekyll
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       with:
