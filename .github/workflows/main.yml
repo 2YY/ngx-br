@@ -72,6 +72,8 @@ jobs:
       run: yarn install
     - name: Build
       run: npm run build
+    - name: Export coverage
+      run: npm run test -- --no-watch --code-coverage --no-progress --browsers=ChromeHeadlessCI
     - name: Add .nojekyll file to GitHub Pages deployment
       run: touch coverage/lib-ngx-br/.nojekyll
     - name: Deploy
