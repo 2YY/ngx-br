@@ -6,10 +6,9 @@ on:
       - master
 
 jobs:
-  install:
+  test:
     runs-on: ubuntu-18.04
     steps:
-    - uses: actions/checkout@v2
     - name: Cache node modules
       uses: actions/cache@v1
       env:
@@ -22,11 +21,6 @@ jobs:
     - name: Install node modules
       if: steps.cache.outputs.cache-hit != 'true'
       run: yarn install
-
-  test:
-    runs-on: ubuntu-18.04
-    needs: install
-    steps:
     - uses: actions/checkout@v2
     - name: Lint
       run: npm run lint
