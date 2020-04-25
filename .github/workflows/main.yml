@@ -24,6 +24,7 @@ jobs:
       run: yarn install
     - name: Install latest Google Chrome for E2E tests
       run: |
+        apt-get update
         sudo apt-get remove google-chrome-stable
         sudo apt-get install libsqlite3-dev chromium-driver
     - name: Lint
