@@ -31,7 +31,6 @@ jobs:
 
   coverage:
     needs: test
-    runs-on: ubuntu-18.04
     steps:
     - uses: actions/checkout@v2
     - name: Cache node modules
