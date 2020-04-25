@@ -51,6 +51,7 @@ jobs:
         CC_TEST_REPORTER_ID: 42c27b74a690995c660c6145bf97191267e42d28e5e8eed1158459d097de93b9
       with:
         coverageCommand: npm run test -- --no-watch --code-coverage --no-progress --browsers=ChromeHeadlessCI
+        coverageLocations: ${{github.workspace}}/coverage/ngx-br/lcov.info:lcov
 
 #  deploy:
 #    needs: install
