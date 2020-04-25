@@ -23,7 +23,9 @@ jobs:
       if: steps.cache.outputs.cache-hit != 'true'
       run: yarn install
     - name: Install latest Google Chrome for E2E tests
-      run: sudo apt-get install libsqlite3-dev chromium-driver google-chrome-latest
+      run: |
+        sudo apt-get remove google-chrome-stable
+        sudo apt-get install libsqlite3-dev chromium-driver
     - name: Lint
       run: npm run lint
     - name: Unit Test
