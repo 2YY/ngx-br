@@ -54,7 +54,7 @@ jobs:
         coverageLocations: ${{github.workspace}}/coverage/ngx-br/lcov.info:lcov
 
   deploy:
-    needs: install
+    needs: coverage
     runs-on: ubuntu-18.04
     steps:
     - uses: actions/checkout@v2
