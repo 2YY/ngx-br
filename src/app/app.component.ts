@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ngx-br';
+  message = 'What do you want to do next with your app?'.replace(/\s/g, '\n');
 }
