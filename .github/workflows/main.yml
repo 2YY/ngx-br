@@ -29,15 +29,28 @@ jobs:
 #    - name: E2E Test
 #      run: npm run e2e -- --protractor-config=e2e/protractor-ci.conf.js
 
-#  coverage:
-#    needs: install
-#    steps:
-#    - name: CC
-#    - uses: paambaati/codeclimate-action@v2.2.4
-#      env:
-#        CC_TEST_REPORTER_ID: 42c27b74a690995c660c6145bf97191267e42d28e5e8eed1158459d097de93b9
-#      with:
-#        coverageCommand: npm run test -- --no-watch --code-coverage --no-progress --browsers=ChromeHeadlessCI
+  coverage:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+      - name: Cache node modules
+        uses: actions/cache@v1
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: ~/.cache/yarn
+          key: ${{ runner.os }}-projectname-${{ hashFiles(format('{0}{1}', github.workspace, '/yarn.lock')) }}
+          restore-keys: |
+            ${{ runner.os }}-projectname-
+      - name: Install node modules
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: yarn install
+    - name: CC
+    - uses: paambaati/codeclimate-action@v2.2.4
+      env:
+        CC_TEST_REPORTER_ID: 42c27b74a690995c660c6145bf97191267e42d28e5e8eed1158459d097de93b9
+      with:
+        coverageCommand: npm run test -- --no-watch --code-coverage --no-progress --browsers=ChromeHeadlessCI
 
 #  deploy:
 #    needs: install
