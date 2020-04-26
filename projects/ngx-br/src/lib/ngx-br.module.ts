@@ -5,8 +5,7 @@ import { NgxBrPipe } from './ngx-br.pipe';
 
 @NgModule({
   declarations: [NgxBrPipe],
-  imports: [
-  ],
+  imports: [],
   exports: [NgxBrPipe]
 })
 export class NgxBrModule { }
