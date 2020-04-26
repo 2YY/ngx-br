@@ -23,7 +23,7 @@ jobs:
       if: steps.cache.outputs.cache-hit != 'true'
       run: yarn install
     - name: Set alias ng command
-      alias ng="/Users/reinos/.npm/lib/node_modules/angular-cli/bin/ng"
+      run: alias ng="/Users/reinos/.npm/lib/node_modules/angular-cli/bin/ng"
     - name: Lint
       run: ng lint ngx-br
     - uses: paambaati/codeclimate-action@v2.6.0
