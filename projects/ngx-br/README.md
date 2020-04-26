@@ -1,24 +1,19 @@
 # NgxBr
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.7.
+![CI](https://github.com/2YY/ngx-br/workflows/CI/badge.svg)
+[![Maintainability](https://api.codeclimate.com/v1/badges/864dcdff5e2b8f2f409c/maintainability)](https://codeclimate.com/github/2YY/ngx-br/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/864dcdff5e2b8f2f409c/test_coverage)](https://codeclimate.com/github/2YY/ngx-br/test_coverage)
 
-## Code scaffolding
+## Usage
 
-Run `ng generate component component-name --project ngx-br` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ngx-br`.
-> Note: Don't forget to add `--project ngx-br` or else it will be added to the default project in your `angular.json` file. 
+In your component:
 
-## Build
+`message = 'hoge\nfuga';`
 
-Run `ng build ngx-br` to build the project. The build artifacts will be stored in the `dist/` directory.
+then, in your template:
 
-## Publishing
+`<p [innerHTML]="message | ngxBr"></p>`
 
-After building your library with `ng build ngx-br`, go to the dist folder `cd dist/ngx-br` and run `npm publish`.
+should be:
 
-## Running unit tests
-
-Run `ng test ngx-br` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+`<p>hoge<br>fuga</p>`
