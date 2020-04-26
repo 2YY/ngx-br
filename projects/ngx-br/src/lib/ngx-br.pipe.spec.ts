@@ -1,7 +1,7 @@
-import { LibNgxBrPipe } from './lib-ngx-br.pipe';
+import { NgxBrPipe } from './ngx-br.pipe';
 
-describe('LibNgxBrPipe', () => {
-  const pipe = new LibNgxBrPipe();
+describe('NgxBrPipe', () => {
+  const pipe = new NgxBrPipe();
 
   it('create an instance', () => {
     expect(pipe).toBeTruthy();

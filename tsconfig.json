@@ -19,9 +19,9 @@
       "dom"
     ],
     "paths": {
-      "lib-ngx-br": [
-        "dist/lib-ngx-br/lib-ngx-br",
-        "dist/lib-ngx-br"
+      "ngx-br": [
+        "dist/ngx-br/ngx-br",
+        "dist/ngx-br"
       ]
     }
   },

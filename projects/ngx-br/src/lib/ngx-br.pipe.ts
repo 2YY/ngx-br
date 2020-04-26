@@ -1,9 +1,9 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'libNgxBr'
+  name: 'ngxBr'
 })
-export class LibNgxBrPipe implements PipeTransform {
+export class NgxBrPipe implements PipeTransform {
 
   transform(value: string, ...args: unknown[]) {
     return value.trim().replace(/(?:\r\n|\r|\n)/g, '<br>');

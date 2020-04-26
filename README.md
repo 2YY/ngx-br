@@ -12,7 +12,7 @@ In your component:
 
 then, in your template:
 
-`<p [innerHTML]="message | libNgxBr"></p>`
+`<p [innerHTML]="message | ngxBr"></p>`
 
 should be:
 
