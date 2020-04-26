@@ -21,3 +21,7 @@ then, in your template:
 should be:
 
 `<p>hoge<br>fuga</p>`
+
+## License
+
+[MIT License](../../LICENSE)
