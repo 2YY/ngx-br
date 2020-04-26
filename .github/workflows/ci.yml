@@ -22,18 +22,16 @@ jobs:
     - name: Install node modules
       if: steps.cache.outputs.cache-hit != 'true'
       run: yarn install
-    - name: Set alias ng command
-      run: alias ng="node_modules/angular-cli/bin/ng"
     - name: Lint
-      run: ng lint ngx-br
+      run: node_modules/@angular/cli/bin/ng lint ngx-br
     - uses: paambaati/codeclimate-action@v2.6.0
       env:
         CC_TEST_REPORTER_ID: 42c27b74a690995c660c6145bf97191267e42d28e5e8eed1158459d097de93b9
       with:
-        coverageCommand: ng test ngx-br -- --no-watch --code-coverage --no-progress --browsers=ChromeHeadlessCI
+        coverageCommand: node_modules/@angular/cli/bin/ng test ngx-br -- --no-watch --code-coverage --no-progress --browsers=ChromeHeadlessCI
         coverageLocations: ${{github.workspace}}/coverage/ngx-br/lcov.info:lcov
     - name: Build
-      run: ng build ngx-br
+      run: node_modules/@angular/cli/bin/ng build ngx-br
     - name: Add .nojekyll file to GitHub Pages deployment
       run: touch coverage/ngx-br/.nojekyll
     - name: Deploy
