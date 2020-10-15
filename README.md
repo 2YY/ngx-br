@@ -1,6 +1,6 @@
 # NgxBr
 
-![CI](https://github.com/2YY/ngx-br/workflows/CI/badge.svg)
+![Test](https://github.com/2YY/ngx-br/workflows/Test/badge.svg)
 [![Maintainability](https://api.codeclimate.com/v1/badges/864dcdff5e2b8f2f409c/maintainability)](https://codeclimate.com/github/2YY/ngx-br/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/864dcdff5e2b8f2f409c/test_coverage)](https://codeclimate.com/github/2YY/ngx-br/test_coverage)
 
