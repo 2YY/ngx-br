@@ -19,10 +19,10 @@ jobs:
         cache-name: cache-node-modules
       with:
         path: ~/.cache/yarn
-        key: ${{ runner.os }}-test-${{ env.cache-name }}-${{ hashFiles('**/yarn.lock') }}
+        key: ${{ runner.os }}-ngxbr-${{ env.cache-name }}-${{ hashFiles('**/yarn.lock') }}
         restore-keys: |
-          ${{ runner.os }}-test-${{ env.cache-name }}-
-          ${{ runner.os }}-test-
+          ${{ runner.os }}-ngxbr-${{ env.cache-name }}-
+          ${{ runner.os }}-ngxbr-
           ${{ runner.os }}-
 
     - name: Install node modules
@@ -51,10 +51,10 @@ jobs:
           cache-name: cache-node-modules
         with:
           path: ~/.cache/yarn
-          key: ${{ runner.os }}-test-${{ env.cache-name }}-${{ hashFiles('**/yarn.lock') }}
+          key: ${{ runner.os }}-ngxbr-${{ env.cache-name }}-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
-            ${{ runner.os }}-test-${{ env.cache-name }}-
-            ${{ runner.os }}-test-
+            ${{ runner.os }}-ngxbr-${{ env.cache-name }}-
+            ${{ runner.os }}-ngxbr-
             ${{ runner.os }}-
 
       - name: Install node modules
