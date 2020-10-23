@@ -17,14 +17,16 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Cache node modules
-        uses: actions/cache@v1
+        uses: actions/cache@v2
         env:
           cache-name: cache-node-modules
         with:
           path: ~/.cache/yarn
-          key: ${{ runner.os }}-projectname-${{ hashFiles(format('{0}{1}', github.workspace, '/yarn.lock')) }}
+          key: ${{ runner.os }}-deploy-${{ env.cache-name }}-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
-            ${{ runner.os }}-projectname-
+            ${{ runner.os }}-deploy-${{ env.cache-name }}-
+            ${{ runner.os }}-deploy-
+            ${{ runner.os }}-
 
       - name: Install node modules
         if: steps.cache.outputs.cache-hit != 'true'
