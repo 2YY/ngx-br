@@ -1,0 +1,315 @@
+{
+    "pipes": [
+        {
+            "name": "NgxBrPipe",
+            "id": "pipe-NgxBrPipe-96cce76bfe5955284af194a133421841",
+            "file": "projects/ngx-br/src/lib/ngx-br.pipe.ts",
+            "type": "pipe",
+            "description": "",
+            "properties": [],
+            "methods": [
+                {
+                    "name": "transform",
+                    "args": [
+                        {
+                            "name": "value",
+                            "type": "string"
+                        },
+                        {
+                            "name": "args",
+                            "type": "unknown[]",
+                            "dotDotDotToken": true
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "any",
+                    "typeParameters": [],
+                    "line": 8,
+                    "jsdoctags": [
+                        {
+                            "name": "value",
+                            "type": "string",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "args",
+                            "type": "unknown[]",
+                            "dotDotDotToken": true,
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "ngname": "ngxBr",
+            "sourceCode": "import { Pipe, PipeTransform } from '@angular/core';\n\n@Pipe({\n  name: 'ngxBr'\n})\nexport class NgxBrPipe implements PipeTransform {\n\n  transform(value: string, ...args: unknown[]) {\n    return value.trim().replace(/(?:\\r\\n|\\r|\\n)/g, '<br>');\n  }\n\n}\n"
+        }
+    ],
+    "interfaces": [],
+    "injectables": [],
+    "classes": [],
+    "directives": [],
+    "components": [
+        {
+            "name": "ExampleComponent",
+            "id": "component-ExampleComponent-8191d263bb182b53b2bfb885a4731b84",
+            "file": "projects/ngx-br/src/stories/Br.stories.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "lib-example",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<table>\n\t<thead>\n\t\t<tr> <th>BrPipe is</th><th>Result</th> </tr>\n\t</thead>\n\t<tbody>\n\t\t<tr>\n\t\t\t<td>disabled</td>\n\t\t\t<td [innerHTML]=\"text\"></td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>enabled</td>\n\t\t\t<td [innerHTML]=\"text | ngxBr\"></td>\n\t\t</tr>\n\t</tbody>\n</table>\n\t",
+            "templateUrl": [],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "text",
+                    "line": 27,
+                    "type": "string"
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import {Component, Input, NgModule} from '@angular/core';\nimport { NgxBrModule } from 'ngx-br';\nimport {Meta, moduleMetadata, Story} from '@storybook/angular';\n\n@Component({\n\tselector: 'lib-example',\n\ttemplate: `\n\t\t<table>\n\t\t\t<thead>\n\t\t\t\t<tr> <th>BrPipe is</th><th>Result</th> </tr>\n\t\t\t</thead>\n\t\t\t<tbody>\n\t\t\t\t<tr>\n\t\t\t\t\t<td>disabled</td>\n\t\t\t\t\t<td [innerHTML]=\"text\"></td>\n\t\t\t\t</tr>\n\t\t\t\t<tr>\n\t\t\t\t\t<td>enabled</td>\n\t\t\t\t\t<td [innerHTML]=\"text | ngxBr\"></td>\n\t\t\t\t</tr>\n\t\t\t</tbody>\n\t\t</table>\n\t`,\n\tstyles: [],\n})\nclass ExampleComponent {\n\t@Input() text: string;\n}\n\n@NgModule({\n\tdeclarations: [ExampleComponent],\n\timports: [NgxBrModule],\n\texports: [ExampleComponent],\n})\nclass ExampleModule {}\n\nexport default {\n\ttitle: 'Example/Br',\n\tcomponent: ExampleComponent,\n\tdecorators: [moduleMetadata({ imports: [ExampleModule] })],\n} as Meta;\n\nconst Template: Story<ExampleComponent> = (args: ExampleComponent) => ({\n  component: ExampleComponent,\n  props: args\n});\n\nexport const Demo = Template.bind({});\nDemo.args = {\n  text: 'blur\\nblur\\nblur'\n};\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": ""
+        }
+    ],
+    "modules": [
+        {
+            "name": "ExampleModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "ExampleComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "NgxBrModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "ExampleComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "NgxBrModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "NgxBrPipe"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "NgxBrPipe"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        }
+    ],
+    "miscellaneous": {
+        "variables": [
+            {
+                "name": "context",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ngx-br/src/test.ts",
+                "type": "",
+                "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
+            },
+            {
+                "name": "Demo",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ngx-br/src/stories/Br.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "require",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ngx-br/src/test.ts",
+                "type": "literal type"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ngx-br/src/stories/Br.stories.ts",
+                "type": "Story<ExampleComponent>",
+                "defaultValue": "(args: ExampleComponent) => ({\n  component: ExampleComponent,\n  props: args\n})"
+            }
+        ],
+        "functions": [],
+        "typealiases": [],
+        "enumerations": [],
+        "groupedVariables": {
+            "projects/ngx-br/src/test.ts": [
+                {
+                    "name": "context",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ngx-br/src/test.ts",
+                    "type": "",
+                    "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
+                },
+                {
+                    "name": "require",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ngx-br/src/test.ts",
+                    "type": "literal type"
+                }
+            ],
+            "projects/ngx-br/src/stories/Br.stories.ts": [
+                {
+                    "name": "Demo",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ngx-br/src/stories/Br.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ngx-br/src/stories/Br.stories.ts",
+                    "type": "Story<ExampleComponent>",
+                    "defaultValue": "(args: ExampleComponent) => ({\n  component: ExampleComponent,\n  props: args\n})"
+                }
+            ]
+        },
+        "groupedFunctions": {},
+        "groupedEnumerations": {},
+        "groupedTypeAliases": {}
+    },
+    "routes": [],
+    "coverage": {
+        "count": 0,
+        "status": "low",
+        "files": [
+            {
+                "filePath": "projects/ngx-br/src/lib/ngx-br.pipe.ts",
+                "type": "pipe",
+                "linktype": "pipe",
+                "name": "NgxBrPipe",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngx-br/src/stories/Br.stories.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ExampleComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngx-br/src/stories/Br.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Demo",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngx-br/src/stories/Br.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngx-br/src/test.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "context",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngx-br/src/test.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "require",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            }
+        ]
+    }
+}
