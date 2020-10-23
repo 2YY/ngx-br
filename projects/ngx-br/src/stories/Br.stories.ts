@@ -1,5 +1,5 @@
 import {Component, Input, NgModule} from '@angular/core';
-import { NgxBrModule } from 'ngx-br';
+import { NgxBrModule } from '../public-api';
 import {Meta, moduleMetadata, Story} from '@storybook/angular';
 
 @Component({
