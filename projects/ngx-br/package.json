@@ -1,6 +1,7 @@
 {
   "name": "2yy-ngx-br",
   "version": "0.0.1",
+  "license": "MIT",
   "homepage": "https://github.com/2YY/ngx-br",
   "repository": "https://github.com/2YY/ngx-br",
   "peerDependencies": {
